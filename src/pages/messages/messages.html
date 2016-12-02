@@ -1,0 +1,29 @@
+<!--
+  Generated template for the Messages page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true" color="primary">
+    <ion-title>Messages</ion-title>
+    <ion-buttons end>
+ <button ion-button  icon-right (click)="popup()">
+    Create Message  
+     
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-list  *ngFor="let m of Message">   
+ <ion-item text-wrap>
+   {{m.Date}}<br> {{m.Message}}<ion-icon  item-right md="md-trash" color="danger" (click)="delete(m)"></ion-icon>
+   </ion-item>
+ </ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button block (click)="logout()">Logout</button>
+</ion-footer>
